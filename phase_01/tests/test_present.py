@@ -15,8 +15,8 @@ def test_unwrap_error():
 
 def test_wrap_error():
     present = Present()
+    present.wrap('item1')
     with pytest.raises(Exception) as e:
-        present.wrap('item1')
         present.wrap('item2')
     error_message = str(e.value)
     assert error_message == 'A contents has already been wrapped.'
