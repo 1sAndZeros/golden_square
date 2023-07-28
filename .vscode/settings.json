@@ -3,5 +3,6 @@
         "debugging", "phase_01", "phase_01", "phase_02" 
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "python.analysis.typeCheckingMode": "basic"
 }
