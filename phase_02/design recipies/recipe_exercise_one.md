@@ -31,30 +31,30 @@ def calculate_reading_time(text):
 """
 Given an empty string, return 0
 """
-estimate_reading_time("") => 0
+calculate_reading_time("") => 0
 
 """
 Given some short text (under 200 words), return float representing the fraction of a minute it would take to read
 """
-estimate_reading_time("This is a very short sentence that contains ten words") => 0.05
+calculate_reading_time("This is a very short sentence that contains ten words") => 0.05
 
 """
 Given a piece of text containing exactly 200 words, return float of 1 representing the minutes it would take to read. The example text below has been truncated!
 """
 
-estimate_reading_time("Lorem ipsum dolor sit amet, consectetur adipiscing elit ... Quisque quis risus dapibus, pretium mi ut, mollis mi. Aliquam erat volutpat.") => 1.0
+calculate_reading_time("Lorem ipsum dolor sit amet, consectetur adipiscing elit ... Quisque quis risus dapibus, pretium mi ut, mollis mi. Aliquam erat volutpat.") => 1.0
 
 """
 Given a longer piece of text (300 words), return float of 1.5 representing the minutes it would take to read. The example text below has been truncated!
 """
 
-estimate_reading_time("Lorem ipsum dolor sit amet, consectetur adipiscing elit ... Quisque quis risus dapibus, pretium mi ut, mollis mi. Aliquam erat volutpat.") => 1.5
+calculate_reading_time("Lorem ipsum dolor sit amet, consectetur adipiscing elit ... Quisque quis risus dapibus, pretium mi ut, mollis mi. Aliquam erat volutpat.") => 1.5
 
 """
 Given a None value
 It throws an error
 """
-estimate_reading_time(None) throws an error
+calculate_reading_time(None) throws an error
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
@@ -65,7 +65,7 @@ _After each test you write, follow the test-driving process of red, green, refac
 
 ```python
 
-from lib.estimate_reading_time import *
+from lib.calculate_reading_time import *
 
 """
 Given some short text (under 200 words), return float representing the fraction of a minute it would take to read
@@ -101,7 +101,7 @@ It throws an error
 """
 def test_none_input():
     with pytest.raises(Exception) as e:
-        estimate_reading_time(None)
+        calculate_reading_time(None)
     error_message = str(e.value)
     assert error_message == 'No text was given. Cannot estimate reading time.'
 

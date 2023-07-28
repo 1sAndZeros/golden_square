@@ -2,18 +2,13 @@
 
 ## 1. Describe the Problem
 
-_Put or write the user story here. Add any clarifying notes you might have._
-
 As a user
 So that I can keep track of my music listening
 I want to add tracks I've listened to and see a list of them.
 
 ## 2. Design the Class Interface
 
-_Include the initializer, public properties, and public methods with all parameters, return values, and side-effects._
-
 ```python
-# EXAMPLE
 
 class MusicTracker:
     # User-facing properties:
@@ -41,10 +36,7 @@ class MusicTracker:
 
 ## 3. Create Examples as Tests
 
-_Make a list of examples of how the class will behave in different situations._
-
 ``` python
-# EXAMPLE
 
 """
 Given a trackname, add the track to the list
@@ -69,17 +61,20 @@ track_list = MusicTracker()
 track_list.add('Three little birds')
 track_list.add('Billie Jean')
 track_list.display_tracklist() -> ['Three little birds', 'Billie Jean']
-```
 
 """
 When display_tracklist is called on an empty list
 return message saying 'Tracklist is empty'
+"""
 
 track_list = MusicTracker()
 track_list.display_tracklist() -> 'Tracklist is empty'
 
+"""
 When an empty string is added through add method
 Raise exception saying 'Please enter a trackname'
+"""
 
 track_list = MusicTracker()
 track_list.add('') -> Exception('Please enter a trackname')
+```
