@@ -101,7 +101,6 @@ def test_extract_uppercase_with_upper_then_lower():
 
 Ensure all test function names are unique, otherwise pytest will ignore them!
 
-
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 
 ---
