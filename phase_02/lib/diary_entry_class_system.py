@@ -6,12 +6,19 @@ class DiaryEntry:
     def __init__(self, title, contents): # title, contents are strings
         # Side-effects:
         #   Sets the title and contents properties
-        pass
+        self.title = title
+        self.contents = contents
+        self.words_read = 0
+        if self.title == "":
+            raise Exception("No Title Given")
+        elif self.contents == "":
+            raise Exception("No Contents Given")
 
     def count_words(self):
         # Returns:
         #   An integer representing the number of words in the contents
-        pass
+        words = self.contents.split()
+        return len(words)
 
     def reading_time(self, wpm):
         # Parameters:
@@ -20,7 +27,10 @@ class DiaryEntry:
         # Returns:
         #   An integer representing an estimate of the reading time in minutes
         #   for the contents at the given wpm.
-        pass
+        if wpm == 0:
+            raise Exception("Wpm cannot be 0")
+        num_of_words = self.count_words()
+        return num_of_words / wpm 
 
     def reading_chunk(self, wpm, minutes):
         # Parameters:
@@ -34,4 +44,10 @@ class DiaryEntry:
         # If called again, `reading_chunk` should return the next chunk,
         # skipping what has already been read, until the contents is fully read.
         # The next call after that it should restart from the beginning.
-        pass
+        no_words_can_read = wpm * minutes
+        words = self.contents.split()
+        if self.count_words() <= self.words_read:
+            self.words_read = 0
+        chunk = " ".join(words[self.words_read:self.words_read + no_words_can_read])
+        self.words_read += no_words_can_read
+        return chunk
