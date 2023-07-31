@@ -1,7 +1,5 @@
 {
-    "python.testing.pytestArgs": [
-        "debugging", "phase_01", "phase_01", "phase_02" 
-    ],
+    "python.testing.pytestArgs": ["debugging", "phase_01", "phase_02/test_drive_class_systems", "phase_02/test_drive_classes", "phase_02/test_drive_single_functions"],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "python.analysis.typeCheckingMode": "basic"
